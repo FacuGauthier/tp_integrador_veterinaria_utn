@@ -19,7 +19,7 @@ public class ClienteService {
         return clienteDAO.listarClientes();
     }
 
-    public Optional<Cliente> buscarCliente(Integer id_cliente){
+    public Optional<Cliente> buscarPorId(Integer id_cliente){
         return clienteDAO.buscarPorId(id_cliente);
     }
 
