@@ -32,7 +32,7 @@ public class ClienteDAO {
 
     public List<Cliente> listarClientes(){
         String sql = """
-                SELECT id_cliente, nombre, apellido, email, telefono FROM cliente
+                SELECT * FROM cliente
                 WHERE activo = true
                 ORDER BY id_cliente;
                 """;
@@ -41,7 +41,7 @@ public class ClienteDAO {
 
     public Optional<Cliente> buscarPorId(Integer id_cliente){
         String sql = """
-                SELECT id_cliente, nombre, apellido, email, telefono FROM cliente
+                SELECT * FROM cliente
                 WHERE id_cliente = ? AND activo = true;
                 """;
         List<Cliente> clientes = jdbcTemplate.query(sql, clienteRowMapper, id_cliente);
