@@ -89,9 +89,10 @@ public class TurnoDAO {
         return jdbcTemplate.update(sql,id_turno);
     }
 
-    public int eliminarTurno(Integer id){
+    public int cancelarTurno(Integer id){
         String sql = """
-                DELETE turno
+                UPDATE turno
+                SET estado = 'cancelado'
                 WHERE id_turno = ?;
                 """;
         return jdbcTemplate.update(sql,id);
