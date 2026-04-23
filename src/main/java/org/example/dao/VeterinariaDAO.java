@@ -70,11 +70,10 @@ public class VeterinariaDAO {
         return jdbcTemplate.update(sql,id_veterinaria);
     }
 
-    public int borrarLogico(Integer id) {
+    public int eliminarVeterinaria(Integer id) {
         String sql = """
-                UPDATE veterinaria
-                SET activo = FALSE
-                WHERE id_veterinaria = ? AND activo = TRUE;
+                DELETE veterinaria
+                WHERE id_veterinaria = ?;
                 """;
         return jdbcTemplate.update(sql,id);
     }
