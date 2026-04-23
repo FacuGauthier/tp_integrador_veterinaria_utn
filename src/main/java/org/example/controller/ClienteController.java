@@ -25,7 +25,7 @@ public class ClienteController {
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> buscarPorId(@PathVariable Integer id){
         return clienteService.buscarPorId(id)
-                .map(cliente -> ResponseEntity.ok(cliente))
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
