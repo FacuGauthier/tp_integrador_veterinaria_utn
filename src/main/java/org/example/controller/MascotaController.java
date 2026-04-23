@@ -29,6 +29,11 @@ public class MascotaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/id_cliente")
+    public List<Mascota> buscarPorCliente(Integer id_cliente){
+        return mascotaService.buscarPorCliente(id_cliente);
+    }
+
     @PostMapping
     public ResponseEntity<String> crearMascota(@RequestBody Mascota mascota){
         boolean creado = mascotaService.crearMascota(mascota);
