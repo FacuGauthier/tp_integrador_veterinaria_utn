@@ -40,7 +40,7 @@ public class TurnoDAO {
         return jdbcTemplate.query(sql, this.turnoRowMapper);
     }
 
-    public Optional<Turno> buscarTurno(Integer id_turno){
+    public Optional<Turno> buscarPorId(Integer id_turno){
         String sql = """
                 SELECT * FROM turno
                 WHERE id_turno = ?;

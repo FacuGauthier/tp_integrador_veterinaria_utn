@@ -19,8 +19,8 @@ public class TurnoService {
         return  turnoDAO.listarTurnos();
     }
 
-    public Optional<Turno> buscarTurno(Integer id){
-        return turnoDAO.buscarTurno(id);
+    public Optional<Turno> buscarPorId(Integer id){
+        return turnoDAO.buscarPorId(id);
     }
 
     public List<Turno> listarTurnosPorVeterinaria(Integer id){
