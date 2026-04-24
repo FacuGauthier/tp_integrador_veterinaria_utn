@@ -86,7 +86,15 @@ public class TurnoDAO {
                 SET fecha = ?, hora = ?, motivo = ?, estado = ?, id_cliente = ?, id_veterinaria = ?, id_mascota = ?
                 WHERE id_turno = ?;
                 """;
-        return jdbcTemplate.update(sql,id_turno);
+        return jdbcTemplate.update(sql,
+                turno.getFecha(),
+                turno.getHora(),
+                turno.getMotivo(),
+                turno.getEstado(),
+                turno.getId_cliente(),
+                turno.getId_veterinaria(),
+                turno.getId_mascota(),
+                id_turno);
     }
 
     public int cancelarTurno(Integer id){

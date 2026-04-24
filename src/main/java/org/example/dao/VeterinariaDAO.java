@@ -67,7 +67,14 @@ public class VeterinariaDAO {
                 SET nombre = ?, apellido = ?, matricula = ?, especialidad = ?, telefono = ?, email = ?
                 WHERE id_veterinaria = ?;
                 """;
-        return jdbcTemplate.update(sql,id_veterinaria);
+        return jdbcTemplate.update(sql,
+                veterinaria.getNombre(),
+                veterinaria.getApellido(),
+                veterinaria.getMatricula(),
+                veterinaria.getEspecialidad(),
+                veterinaria.getTelefono(),
+                veterinaria.getEmail(),
+                id_veterinaria);
     }
 
     public int eliminarVeterinaria(Integer id) {

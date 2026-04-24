@@ -28,8 +28,8 @@ public class ClienteService {
         return filasAfectadas > 0;
     }
 
-    public boolean actualizarCliente(Cliente cliente){
-        int filasAfectadas = clienteDAO.crearCliente(cliente);
+    public boolean actualizarCliente(Integer id, Cliente cliente){
+        int filasAfectadas = clienteDAO.actualizarCliente(id,cliente);
         return filasAfectadas > 0;
     }
 

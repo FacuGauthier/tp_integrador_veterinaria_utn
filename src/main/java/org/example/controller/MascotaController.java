@@ -30,7 +30,7 @@ public class MascotaController {
     }
 
     @GetMapping("/id_cliente")
-    public List<Mascota> buscarPorCliente(Integer id_cliente){
+    public List<Mascota> buscarPorCliente(@PathVariable Integer id_cliente){
         return mascotaService.buscarPorCliente(id_cliente);
     }
 

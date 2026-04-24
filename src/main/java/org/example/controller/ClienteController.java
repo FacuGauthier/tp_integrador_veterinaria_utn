@@ -40,11 +40,11 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> actualizar(
+    public ResponseEntity<String> actualizarCliente(
             @PathVariable Integer id,
             @RequestBody Cliente cliente
     ) {
-        boolean actualizado = clienteService.actualizarCliente(cliente);
+        boolean actualizado = clienteService.actualizarCliente(id,cliente);
         if (actualizado) {
             return ResponseEntity.ok("Cliente actualizado correctamente");
         }

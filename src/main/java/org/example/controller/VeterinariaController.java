@@ -40,11 +40,11 @@ public class VeterinariaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> actualizar(
+    public ResponseEntity<String> actualizarVeterinaria(
             @PathVariable Integer id,
             @RequestBody Veterinaria veterinaria
     ) {
-        boolean actualizado = veterinariaService.actualizareVeterinaria(id, veterinaria);
+        boolean actualizado = veterinariaService.actualizarVeterinaria(id, veterinaria);
         if (actualizado) {
             return ResponseEntity.ok("Veterinaria actualizada correctamente.");
         }

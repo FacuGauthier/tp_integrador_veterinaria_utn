@@ -28,7 +28,7 @@ public class VeterinariaService {
         return filasAfectadas > 0;
     }
 
-    public boolean actualizareVeterinaria(Integer id, Veterinaria veterinaria){
+    public boolean actualizarVeterinaria(Integer id, Veterinaria veterinaria){
         int filasAfectadas = veterinariaDAO.actualizarVeterinaria(id,veterinaria);
         return  filasAfectadas > 0;
     }

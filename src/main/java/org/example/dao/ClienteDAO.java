@@ -67,7 +67,13 @@ public class ClienteDAO {
                 SET nombre = ?, apellido = ?, email = ?, telefono = ?, direccion = ?
                 WHERE id_cliente = ? AND activo = TRUE;"
                 """;
-        return jdbcTemplate.update(sql, id_cliente);
+        return jdbcTemplate.update(sql,
+                cliente.getNombre(),
+                cliente.getApellido(),
+                cliente.getEmail(),
+                cliente.getTelefono(),
+                cliente.getDireccion(),
+                id_cliente);
     }
 
     public int borrarLogico(Integer id_cliente){
